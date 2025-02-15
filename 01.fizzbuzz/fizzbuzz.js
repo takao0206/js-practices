@@ -10,7 +10,7 @@ for (let i = 1; i <= 20; i++) {
   } else if (i % 5 === 0) {
     output = "Buzz";
   } else {
-    output = i;
+    output = String(i);
   }
-  console.log(String(output));
+  console.log(output);
 }
