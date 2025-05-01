@@ -10,7 +10,7 @@ const month = args.m || now.getMonth() + 1;
 
 const header = format(new Date(year, month - 1), "MMMM yyyy");
 const weekDays = "Su Mo Tu We Th Fr Sa";
-const padding = " ".repeat((weekDays.length - header.length) / 2);
+const padding = " ".repeat(Math.ceil((weekDays.length - header.length) / 2));
 
 console.log(padding + header);
 console.log(weekDays);
