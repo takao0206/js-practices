@@ -5,8 +5,8 @@ import minimist from "minimist";
 
 const arg = minimist(process.argv.slice(2));
 const now = new Date();
-const year = arg.y || now.getFullYear();
-const month = arg.m || now.getMonth() + 1;
+const year = arg.y ?? now.getFullYear();
+const month = arg.m ?? now.getMonth() + 1;
 
 const header = dateFns.format(new Date(year, month - 1), "MMMM yyyy");
 const weekDays = "Su Mo Tu We Th Fr Sa";
