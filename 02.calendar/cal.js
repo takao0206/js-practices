@@ -3,10 +3,10 @@
 import * as dateFns from "date-fns";
 import minimist from "minimist";
 
-const calenderOptions = minimist(process.argv.slice(2));
+const calendarOptions = minimist(process.argv.slice(2));
 const now = new Date();
-const year = calenderOptions.y ?? now.getFullYear();
-const month = calenderOptions.m ?? now.getMonth() + 1;
+const year = calendarOptions.y ?? now.getFullYear();
+const month = calendarOptions.m ?? now.getMonth() + 1;
 const firstDate = new Date(year, month - 1, 1);
 
 const header = dateFns.format(firstDate, "MMMM yyyy");
