@@ -7,9 +7,9 @@ const calenderOptions = minimist(process.argv.slice(2));
 const now = new Date();
 const year = calenderOptions.y ?? now.getFullYear();
 const month = calenderOptions.m ?? now.getMonth() + 1;
-const targetMonthFirstDay = new Date(year, month - 1, 1);
+const firstDate = new Date(year, month - 1, 1);
 
-const header = dateFns.format(targetMonthFirstDay, "MMMM yyyy");
+const header = dateFns.format(firstDate, "MMMM yyyy");
 const weekHeaderString = "Su Mo Tu We Th Fr Sa";
 const padding = " ".repeat(
   Math.ceil((weekHeaderString.length - header.length) / 2),
@@ -18,8 +18,7 @@ const padding = " ".repeat(
 console.log(padding + header);
 console.log(weekHeaderString);
 
-const firstDate = dateFns.startOfMonth(targetMonthFirstDay);
-const lastDate = dateFns.endOfMonth(targetMonthFirstDay);
+const lastDate = dateFns.endOfMonth(firstDate);
 const spaceWidth = 3;
 const initialSpaceCounts = firstDate.getDay() * spaceWidth;
 
