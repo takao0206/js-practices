@@ -10,11 +10,13 @@ const month = calenderOptions.m ?? now.getMonth() + 1;
 const targetMonthFirstDay = new Date(year, month - 1, 1);
 
 const header = dateFns.format(targetMonthFirstDay, "MMMM yyyy");
-const weekDays = "Su Mo Tu We Th Fr Sa";
-const padding = " ".repeat(Math.ceil((weekDays.length - header.length) / 2));
+const weekHeaderString = "Su Mo Tu We Th Fr Sa";
+const padding = " ".repeat(
+  Math.ceil((weekHeaderString.length - header.length) / 2),
+);
 
 console.log(padding + header);
-console.log(weekDays);
+console.log(weekHeaderString);
 
 const firstDate = dateFns.startOfMonth(targetMonthFirstDay);
 const lastDate = dateFns.endOfMonth(targetMonthFirstDay);
