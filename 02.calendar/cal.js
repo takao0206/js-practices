@@ -14,16 +14,14 @@ const weekHeader = "Su Mo Tu We Th Fr Sa";
 const padding = " ".repeat(
   Math.ceil((weekHeader.length - monthYearHeader.length) / 2),
 );
-
 console.log(padding + monthYearHeader);
 console.log(weekHeader);
 
-const lastDate = dateFns.endOfMonth(firstDate);
 const spaceWidth = 3;
 const initialSpaceCounts = firstDate.getDay() * spaceWidth;
-
 process.stdout.write(" ".repeat(initialSpaceCounts));
 
+const lastDate = dateFns.endOfMonth(firstDate);
 for (let date = firstDate; date <= lastDate; date = dateFns.addDays(date, 1)) {
   process.stdout.write(String(date.getDate()).padStart(2, " "));
   if (date.getDay() === 6 || date.getDate() === lastDate.getDate()) {
