@@ -9,14 +9,14 @@ const year = options.y ?? now.getFullYear();
 const month = options.m ?? now.getMonth() + 1;
 const firstDate = new Date(year, month - 1, 1);
 
-const header = dateFns.format(firstDate, "MMMM yyyy");
-const weekHeaderString = "Su Mo Tu We Th Fr Sa";
+const monthYearHeader = dateFns.format(firstDate, "MMMM yyyy");
+const weekHeader = "Su Mo Tu We Th Fr Sa";
 const padding = " ".repeat(
-  Math.ceil((weekHeaderString.length - header.length) / 2),
+  Math.ceil((weekHeader.length - monthYearHeader.length) / 2),
 );
 
-console.log(padding + header);
-console.log(weekHeaderString);
+console.log(padding + monthYearHeader);
+console.log(weekHeader);
 
 const lastDate = dateFns.endOfMonth(firstDate);
 const spaceWidth = 3;
